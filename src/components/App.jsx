@@ -8,6 +8,8 @@ import { LoadMoreBtn } from './Button/Button';
 import { Loader } from './Loader/Loader';
 import { GiFinishLine } from 'react-icons/gi';
 
+import { AppContainer } from './App.styled';
+
 const KEY = '30885515-e5cd8644896c6a7d3960ad51e';
 
 export class App extends Component {
@@ -93,7 +95,7 @@ export class App extends Component {
 
   render() {
     return (
-      <div>
+      <AppContainer>
         <Searchbar onSubmit={this.setSearchQuery} />
         <ImageGallery images={this.state.images} />
         {this.state.page === 1 &&
@@ -113,7 +115,7 @@ export class App extends Component {
             </p>
           </div>
         )}
-      </div>
+      </AppContainer>
     );
   }
 }
