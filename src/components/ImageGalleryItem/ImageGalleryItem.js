@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Modal } from 'components/Modal/Modal';
 
 export class ImageGalleryItem extends Component {
@@ -13,7 +14,7 @@ export class ImageGalleryItem extends Component {
   };
 
   render() {
-    const { id, tags, webformatURL, largeImageURL } = this.props.item;
+    const { id, tags, webformatURL, largeImageURL } = this.props;
     return (
       <li id={id} className="gallery-item" onClick={this.openModal}>
         <img src={webformatURL} alt={tags} />
@@ -26,3 +27,10 @@ export class ImageGalleryItem extends Component {
     );
   }
 }
+
+ImageGalleryItem.propTypes = {
+  id: PropTypes.number.isRequired,
+  tags: PropTypes.string.isRequired,
+  webformatURL: PropTypes.string.isRequired,
+  largeImageURL: PropTypes.string.isRequired,
+};
