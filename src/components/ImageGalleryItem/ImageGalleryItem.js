@@ -11,11 +11,11 @@ export class ImageGalleryItem extends Component {
   state = { modalOpen: false };
 
   openModal = () => {
-    this.setState({ modalOpen: true });
+    return this.setState({ modalOpen: true });
   };
 
   closeModal = () => {
-    this.setState({ modalOpen: false });
+    return this.setState({ modalOpen: false });
   };
 
   render() {

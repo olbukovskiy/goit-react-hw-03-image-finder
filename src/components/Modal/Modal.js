@@ -17,7 +17,7 @@ export class Modal extends Component {
   };
 
   onBackdropClickHandler = event => {
-    if (event.currentTarget === event.target) {
+    if (event.target === event.currentTarget) {
       this.props.onClose();
     }
   };

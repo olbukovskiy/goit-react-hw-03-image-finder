@@ -14,6 +14,9 @@ export const Overlay = styled.div`
 `;
 
 export const ModalWindow = styled.div`
-  max-width: calc(100vw - 48px);
-  max-height: calc(100vh - 48px);
+  height: calc(100% - 48px);
+  max-width: 50%;
+  position: relative;
+  margin: 0 auto;
+  -webkit-overflow-scrolling: touch;
 `;
