@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Overlay, ModalWindow } from './Modal.styled';
 
 export class Modal extends Component {
   componentDidMount() {
@@ -16,16 +17,16 @@ export class Modal extends Component {
   };
 
   onBackdropClickHandler = event => {
-    if (event.currentTarget.nodeName === event.target.nodeName) {
+    if (event.currentTarget === event.target) {
       this.props.onClose();
     }
   };
 
   render() {
     return (
-      <div className="overlay" onClick={this.onBackdropClickHandler}>
-        <div className="modal">{this.props.children}</div>
-      </div>
+      <Overlay onClick={this.onBackdropClickHandler}>
+        <ModalWindow>{this.props.children}</ModalWindow>
+      </Overlay>
     );
   }
 }

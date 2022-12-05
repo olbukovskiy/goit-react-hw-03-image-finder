@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Modal } from 'components/Modal/Modal';
+import {
+  ImageGalleryListItem,
+  ImageGalleryImage,
+} from './ImageGalleryItem.styled';
 
 export class ImageGalleryItem extends Component {
   state = { modalOpen: false };
@@ -16,14 +20,14 @@ export class ImageGalleryItem extends Component {
   render() {
     const { id, tags, webformatURL, largeImageURL } = this.props;
     return (
-      <li id={id} className="gallery-item" onClick={this.openModal}>
-        <img src={webformatURL} alt={tags} />
+      <ImageGalleryListItem id={id} onClick={this.openModal}>
+        <ImageGalleryImage src={webformatURL} alt={tags} />
         {this.state.modalOpen && (
           <Modal onClose={this.closeModal}>
             <img src={largeImageURL} alt={tags} />
           </Modal>
         )}
-      </li>
+      </ImageGalleryListItem>
     );
   }
 }

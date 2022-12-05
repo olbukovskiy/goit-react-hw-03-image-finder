@@ -1,6 +1,15 @@
 import React from 'react';
-import { Formik, Form, Field } from 'formik';
+import { Formik } from 'formik';
 import PropTypes from 'prop-types';
+import { GoSearch } from 'react-icons/go';
+
+import {
+  SearchbarContainer,
+  SearchForm,
+  SearchFormButton,
+  SearchFormButtonLabel,
+  SearchFormInput,
+} from './Searchbar.styled';
 
 const initialValues = { searchField: '' };
 
@@ -16,21 +25,21 @@ export function Searchbar({ onSubmit }) {
     >
       {({ isSubmitting }) => {
         return (
-          <header className="searchbar">
-            <Form className="form">
-              <button type="submit" className="button" disabled={isSubmitting}>
-                <span className="button-label">Search</span>
-              </button>
-              <Field
-                className="input"
+          <SearchbarContainer>
+            <SearchForm>
+              <SearchFormButton type="submit" disabled={isSubmitting}>
+                <GoSearch />
+                <SearchFormButtonLabel>Search</SearchFormButtonLabel>
+              </SearchFormButton>
+              <SearchFormInput
                 type="text"
                 autoComplete="off"
                 autoFocus
                 placeholder="Search images and photos"
                 name="searchField"
-              ></Field>
-            </Form>
-          </header>
+              ></SearchFormInput>
+            </SearchForm>
+          </SearchbarContainer>
         );
       }}
     </Formik>
