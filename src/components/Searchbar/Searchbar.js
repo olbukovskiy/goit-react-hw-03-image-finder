@@ -1,7 +1,6 @@
 import React from 'react';
 import { Formik } from 'formik';
 import PropTypes from 'prop-types';
-import { GoSearch } from 'react-icons/go';
 
 import {
   SearchbarContainer,
@@ -9,6 +8,7 @@ import {
   SearchFormButton,
   SearchFormButtonLabel,
   SearchFormInput,
+  SearchIcon,
 } from './Searchbar.styled';
 
 const initialValues = { searchField: '' };
@@ -28,7 +28,7 @@ export function Searchbar({ onSubmit }) {
           <SearchbarContainer>
             <SearchForm>
               <SearchFormButton type="submit" disabled={isSubmitting}>
-                <GoSearch />
+                <SearchIcon />
                 <SearchFormButtonLabel>Search</SearchFormButtonLabel>
               </SearchFormButton>
               <SearchFormInput

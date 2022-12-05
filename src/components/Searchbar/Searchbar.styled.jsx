@@ -1,5 +1,13 @@
 import styled from '@emotion/styled';
 import { Form, Field } from 'formik';
+import { GoSearch } from 'react-icons/go';
+
+export const SearchIcon = styled(GoSearch)`
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+`;
 
 export const SearchbarContainer = styled.header`
   top: 0;
@@ -31,14 +39,11 @@ export const SearchForm = styled(Form)`
 `;
 
 export const SearchFormButton = styled.button`
+  position: relative;
   display: inline-block;
   width: 48px;
   height: 48px;
   border: 0;
-  background-image: url('https://image.flaticon.com/icons/svg/149/149852.svg');
-  background-size: 40%;
-  background-repeat: no-repeat;
-  background-position: center;
   opacity: 0.6;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;

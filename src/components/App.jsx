@@ -6,8 +6,7 @@ import { Searchbar } from './Searchbar/Searchbar';
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import { LoadMoreBtn } from './Button/Button';
 import { Loader } from './Loader/Loader';
-import { GiFinishLine } from 'react-icons/gi';
-
+import { Finish } from './Finish/Finish';
 import { AppContainer } from './App.styled';
 
 const KEY = '30885515-e5cd8644896c6a7d3960ad51e';
@@ -108,12 +107,7 @@ export class App extends Component {
         {this.state.isLoading && <Loader />}
         <ToastContainer />
         {this.state.page === this.countTotalPages(this.state.totalResults) && (
-          <div>
-            <p>
-              We're sorry, but you've reached the end of search results.
-              <GiFinishLine className="finishIcon" width={32} />
-            </p>
-          </div>
+          <Finish />
         )}
       </AppContainer>
     );

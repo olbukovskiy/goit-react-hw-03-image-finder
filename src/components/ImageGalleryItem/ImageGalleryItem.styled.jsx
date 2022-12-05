@@ -17,3 +17,8 @@ export const ImageGalleryImage = styled.img`
     cursor: zoom-in;
   }
 `;
+
+export const ImageLarge = styled.img`
+  object-position: center;
+  object-fit: cover;
+`;

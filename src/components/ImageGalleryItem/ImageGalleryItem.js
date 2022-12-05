@@ -4,6 +4,7 @@ import { Modal } from 'components/Modal/Modal';
 import {
   ImageGalleryListItem,
   ImageGalleryImage,
+  ImageLarge,
 } from './ImageGalleryItem.styled';
 
 export class ImageGalleryItem extends Component {
@@ -24,7 +25,7 @@ export class ImageGalleryItem extends Component {
         <ImageGalleryImage src={webformatURL} alt={tags} />
         {this.state.modalOpen && (
           <Modal onClose={this.closeModal}>
-            <img src={largeImageURL} alt={tags} />
+            <ImageLarge src={largeImageURL} alt={tags} />
           </Modal>
         )}
       </ImageGalleryListItem>
