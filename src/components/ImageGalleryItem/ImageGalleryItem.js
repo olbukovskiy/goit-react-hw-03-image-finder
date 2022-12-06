@@ -10,19 +10,19 @@ import {
 export class ImageGalleryItem extends Component {
   state = { modalOpen: false };
 
-  openModal = () => {
-    this.setState({ modalOpen: true });
-  };
+  openModal = () => this.setState({ modalOpen: true });
 
-  closeModal = () => {
-    this.setState({ modalOpen: false });
-  };
+  closeModal = () => this.setState({ modalOpen: false });
 
   render() {
     const { id, tags, webformatURL, largeImageURL } = this.props;
     return (
-      <ImageGalleryListItem id={id} onClick={this.openModal}>
-        <ImageGalleryImage src={webformatURL} alt={tags} />
+      <ImageGalleryListItem id={id}>
+        <ImageGalleryImage
+          onClick={this.openModal}
+          src={webformatURL}
+          alt={tags}
+        />
         {this.state.modalOpen && (
           <Modal onClose={this.closeModal}>
             <ImageLarge src={largeImageURL} alt={tags} />
