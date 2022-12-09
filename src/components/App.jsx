@@ -41,14 +41,16 @@ export class App extends Component {
           toast.error('Nothing found for your request', { autoClose: 3000 });
         }
 
-        const imagesData = response.map(item => {
-          return {
-            id: item.id,
-            tags: item.tags,
-            webformatURL: item.webformatURL,
-            largeImageURL: item.largeImageURL,
-          };
-        });
+        const imagesData = response.map(
+          ({ id, tags, webformatURL, largeImageURL }) => {
+            return {
+              id,
+              tags,
+              webformatURL,
+              largeImageURL,
+            };
+          }
+        );
 
         this.setState(prevState => {
           return {
