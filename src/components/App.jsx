@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 import { FindImages } from './services/API';
 import { Searchbar } from './Searchbar/Searchbar';
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import { LoadMoreBtn } from './Button/Button';
 import { Loader } from './Loader/Loader';
 import { Finish } from './Finish/Finish';
+
 import { AppContainer } from './App.styled';
 
 const KEY = '30885515-e5cd8644896c6a7d3960ad51e';
